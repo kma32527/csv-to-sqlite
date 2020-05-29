@@ -17,7 +17,9 @@ To run this application:
 If successful, the directory should contain three files with names dependent on \<input-filename\>.csv.
 1) \<input-filename\>.db: A database containing a single table with the name \<input-filename\> containing successfully inserted records from the input csv file.
 2) \<input-filename\>.log: A log with an entry containing the number of records received, number of records successfully inserted into the database, and number of records failed.
-3) \<input-filename\>-bad.csv: A csv file containing the records that failed to be inserted.
+3) \<input-filename\>-bad.csv: A csv file containing the records that failed to be inserted. These entries consist of:
+   - Records that do not match the length of the header.
+   - Records that fail the type check.
 
 ### Why is the application not doing anything and telling me that the table already exists?
 This occurs when a table with the name \<input-filename\> already exists in the database. Delete the table from the database (you can use the Database method dropTable()) and this application should run correctly. To guarantee everything runs as intended, make sure to delete \<input-filename\>.log and \<input-filename\>-bad.csv from the directory as well if they already exist.
