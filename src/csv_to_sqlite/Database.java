@@ -99,8 +99,8 @@ public class Database {
 			 return null;
 		 }
 		 // constructs an SQLite query using the tableName and column names+types
-		 String sql = "CREATE TABLE IF NOT EXISTS " + tableName + "(\n"
-				 + "	id integer PRIMARY KEY,\n";
+		 String sql = "CREATE TABLE IF NOT EXISTS " + tableName + "(\n";
+		 //		 + "	id integer PRIMARY KEY,\n";
 		 for(int i=0; i<cols.length; i++) {
 			 if(i<cols.length-1) {
 				 sql += "	" + cols[i].getName() + " " + cols[i].getType() + ",\n"; 
