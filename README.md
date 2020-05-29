@@ -53,3 +53,9 @@ This project consists of 6 classes
       - At least one value in the array failed to pass the type check
   - To print values from the table, either call selectTable() to print all records in the table or selectTable(int limit) to print up to the specified number of records.
   - When done with a Table instance, call close() to close the PreparedStatement.
+- TypePrompt: A prompt that pops up when executing CsvToSQLite.convert(). Creates a JDialog that pauses execution of the program and allows the user to input the desired types of each column for each variable from a list of valid column types.
+- Variable: An instantiable class containing a column's name and type.
+  - Attributes:
+    - String name: The name of a column
+    - String type: The type of a column
+  - Contains a String array of valid column types
