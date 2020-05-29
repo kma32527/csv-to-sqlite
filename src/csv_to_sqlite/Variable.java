@@ -1,7 +1,7 @@
 package csv_to_sqlite;
 
 public class Variable {
-	final static String[] validTypes = {"TEXT", "INTEGER", "REAL", "NUMERIC", "BOOLEAN", "PNG64"};
+	final static String[] validTypes = {"TEXT", "INTEGER", "REAL", "BOOLEAN", "PNG64"};
 	private String name;
 	private String type;
 	
