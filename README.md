@@ -21,8 +21,9 @@ If successful, the directory should contain three files with names dependent on 
 
 ### The input csv file
 The input csv file should satisfy the following requirements:
-1) The first row of the csv should contain the column names with no missing values
-2) Values containing internal commas must be enclosed by double quotes e.g. the string "\\"This,contains,commas\\"" is parsed as a single value, while the string "This,contains,commas" is parsed as 3 distinct values.
+1) The first row of the csv should contain the column names with no missing values.
+2) Values containing internal commas must be enclosed by double quotes.
+   - e.g. the string "\\"This,contains,commas\\"" is parsed as a single value, while the string "This,contains,commas" is parsed as 3 distinct values.
 
 ### Type checking on insertion
 While SQLite support dynamic typing and allows for insertion of values independent of column type, this application performs a type check during insertion into a table. If an entry does not pass the type check, it fails to be inserted and is treated as a bad entry. Missing values and values consisting exclusively of whitespace characters are stored as null.
@@ -56,12 +57,12 @@ A non-instantiable class for converting a csv to an SQLite database table.
 ### Database
 An instantiable class that connects to an SQLite database via JDBC.
 - Attributes:
-  - String directory: The path of the parent directory of the database
-  - String dbName: The name of the database ending in .db
-  - Connection conn: The Connection instance that connects to the database via JDBC
+  - String directory: The path of the parent directory of the database.
+  - String dbName: The name of the database ending in .db.
+  - Connection conn: The Connection instance that connects to the database via JDBC.
 - The constructor creates a Connection instance and has the following parameters:
-  - String directory: The path of the parent directory of the database
-  - String dbName: The name of the database ending in .db
+  - String directory: The path of the parent directory of the database.
+  - String dbName: The name of the database ending in .db.
 - Autocommit is set to off; to commit changes to the database, call commit().
 - To create a new table in the database, use the method createNewTable(String tableName, Variable[] cols) to create a new table. This method returns a corresponding Table object. If a table with the name tableName already exists, this method does nothing and returns null.
 - To select an existing table in the database, use the method selectTable(String tableName). If the table exists in the database, this returns a corresponding Table object, and null otherwise.
@@ -78,7 +79,7 @@ An instantiable class that provides a Java representation of an SQLite table. In
   - Connection conn: The Connection instance connecting to the parent database.
   - String tableName: The name of the table.
   - Variable[] cols: An array of Variable objects containing the name and type of each column.
-- To insert a string array into a table, use the method insert(String[] values)
+- To insert a string array into a table, use the method insert(String[] values).
   - Throws a SQLException without inserting anything into the table in the following cases:
     - The array is incorrectly sized
     - At least one value in the array failed to pass the type check
