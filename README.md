@@ -17,6 +17,9 @@ If successful, the directory should contain three files with names dependent on 
 2) \<input-filename\>.log: A log with an entry containing the number of records received, number of records successfully inserted into the database, and number of records failed.
 3) \<input-filename\>-bad.csv: A csv file containing the records that failed to be inserted.
 
+### Why is the application not doing anything telling me that the table already exists?
+This occurs when a table with the name \<input-filename\> already exists in the database. Delete the table from the database and this application should run correctly.
+
 ## Overview
 
 ### The input csv file
@@ -66,6 +69,7 @@ An instantiable class that connects to an SQLite database via JDBC.
 - Autocommit is set to off; to commit changes to the database, call commit().
 - To create a new table in the database, use the method createNewTable(String tableName, Variable[] cols) to create a new table. This method returns a corresponding Table object. If a table with the name tableName already exists, this method does nothing and returns null.
 - To select an existing table in the database, use the method selectTable(String tableName). If the table exists in the database, this returns a corresponding Table object, and null otherwise.
+- To delete an existing table from the database, use the method dropTable(String tableName) to delete the named table.
 - When done with a Database instance, call close() on the Database to close the JDBC connection. While garbage collection should automatically close this connection, every now and then this connection may not close automatically and require restarting your computer to reset it.
   
 ### Table
