@@ -32,7 +32,10 @@ The following 5 types are supported by this application:
    - On insertion, the application calls Integer.parseInt(String str) on the value and inserts the result. If this fails to parse an integer, then the entry fails.
 3) REAL: Stores decimal values
    - On insertion, the application strips all characters that are neither digits, '.', nor '-'. If the remaining string can be parsed into a double by Double.parseDouble(String str), then the value is inserted. Otherwise, the entry fails.
-4) 
+4) BOOLEAN: Stores boolean values
+   - The value must equal (ignoring case) either "True" or "False" and is inserted as such. Otherwise, the entry fails. "F", "T", "0", and "1" will all fail.
+5) PNG64: Stores a PNG image encoded in Base64 as a byte array.
+   - The value must contain the substring "png;base64," as a substring, followed by a valid base64 representation of a PNG image.
 
 ## Code Overview
 This project consists of 6 classes
