@@ -22,9 +22,9 @@ If successful, the directory should contain three files with names dependent on 
 ### Why is the application not doing anything and telling me that the table already exists?
 This occurs when a table with the name \<input-filename\> already exists in the database. Delete the table from the database (you can use the Database method dropTable()) and this application should run correctly. To guarantee everything runs as intended, make sure to delete \<input-filename\>.log and \<input-filename\>-bad.csv from the directory as well if they already exist.
 
-## Overview
+## General overview
 
-### The input csv file
+### Requirements on the input csv file
 The input csv file should satisfy the following requirements:
 1) The first row of the csv should contain the column names with no missing values.
 2) Values containing internal commas must be enclosed by double quotes.
