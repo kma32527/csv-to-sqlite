@@ -1,7 +1,7 @@
 # csv-to-sqlite
 
 ## Summary
-This is an application to migrate data from a csv file into an SQLite database table.
+This is an application to migrate data from a csv file into an SQLite database table. This app supports TEXT, INTEGER, REAL, BOOLEAN, and PNG base 64 data types, with type checking performed when inserting records into the SQLite table.
 
 ## Getting started
 To run this application:
