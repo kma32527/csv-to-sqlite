@@ -17,3 +17,7 @@ If successful, the directory should contain three files with names dependent on 
 3) \<input-filename\>-bad.csv: A csv file containing the records that failed to be inserted.
 
 ## Overview
+This project consists of 6 classes
+- App: A runnable, non-instantiable class.
+- CsvToSQLite: A non-instantiable class for converting a csv to a SQLite database table. 
+  - The static method convert(String directory, String csvPath) creates a database in the specified directory containing a table with successfully inserted records from the specified csv file.
