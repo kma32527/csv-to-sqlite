@@ -21,7 +21,7 @@ If successful, the directory should contain three files with names dependent on 
 ### The input csv file
 The input csv file should satisfy the following requirements:
 1) The first row of the csv should contain the column names with no missing values
-2) Values containing internal commas must be enclosed by double quotes e.g. "\\"This, contains, commas\\"" is parsed as a single value,.
+2) Values containing internal commas must be enclosed by double quotes e.g. "\\"This,contains,commas\\"" is parsed as a single value, while "This,is,4,values" is parsed as 4 distinct values.
 
 ## Code Overview
 This project consists of 6 classes
