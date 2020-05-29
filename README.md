@@ -73,7 +73,7 @@ An instantiable class that provides a Java representation of an SQLite table. In
   - String tableName: The name of the table.
   - Variable[] cols: An array of Variable objects containing the name and type of each column.
   - PreparedStatement istmt: A PreparedStatement object representing a precompiled insert statement for this table.
-- The constructor generates the insertion PreparedStatemnt and has the following parameters:
+- The constructor generates the insertion PreparedStatement and has the following parameters:
   - Connection conn: The Connection instance connecting to the parent database.
   - String tableName: The name of the table.
   - Variable[] cols: An array of Variable objects containing the name and type of each column.
