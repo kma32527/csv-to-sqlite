@@ -24,7 +24,7 @@ The input csv file should satisfy the following requirements:
 2) Values containing internal commas must be enclosed by double quotes e.g. the string "\\"This,contains,commas\\"" is parsed as a single value, while the string "This,contains,commas" is parsed as 3 distinct values.
 
 ### Type checking on insertion
-While SQLite support dynamic typing and allows for insertion of values independent of column type, this application performs a type check during insertion into a table. If an entry does not pass the type check, it fails to be inserted. Missing values and values consisting exclusively of whitespace characters are stored as null.
+While SQLite support dynamic typing and allows for insertion of values independent of column type, this application performs a type check during insertion into a table. If an entry does not pass the type check, it fails to be inserted and is treated as a bad entry. Missing values and values consisting exclusively of whitespace characters are stored as null.
 
 The following 5 types are supported by this application:
 1) TEXT: A generic type for storing text data. This inserts a string as-is.
