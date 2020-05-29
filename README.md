@@ -21,11 +21,12 @@ This project consists of 6 classes
 - App: A runnable, non-instantiable class.
 - CsvToSQLite: A non-instantiable class for converting a csv to a SQLite database table. 
   - The static method convert(String directory, String csvPath) creates the following files in the specified directory:
-     - A database in the specified directory containing a table with successfully inserted records from the specified csv file.
-     - A csv file in the specified directory containing the records that failed to insert into the created table
-     - A log file detailing the number of records found in the csv, the number of records successfully inserted into the table, and the number of records that failed to be inserted
+     1) A database in the specified directory containing a table with successfully inserted records from the specified csv file.
+     2) A csv file in the specified directory containing the records that failed to insert into the created table
+     3) A log file detailing the number of records found in the csv, the number of records successfully inserted into the table, and the number of records that failed to be inserted
   - This class contains various other additional helper methods.
 - Database: An instantiable class that connects to a SQLite database via JDBC.
   - The constructor takes a directory path and database name and creates a Connection to the database. If the database does not already exists, the constructor creates a new database with the given name.
   - Autocommit is set to off; to commit changes to the database, call commit().
-  - 
+  - To create a new table in the database, use the method createNewTable(String tableName, Variable[] cols) to create a new table. This method returns a corresponding Table object. If a table with the name tableName already exists, this method does nothing and returns null.
+  - To select an existing table in the database, use the method selectTable(String tableName). If the table exists in the database, this returns a corresponding Table object, and null otherwise.
