@@ -7,8 +7,11 @@ package csv_to_sqlite;
  */
 public class App {
 
+	//EDIT THIS
 	//Target directory path. Must be a valid existing directory
 	static String directory="C://sqlite/db/";
+	
+	//EDIT THIS
 	//Path of the csv you want to convert
 	static String csvPath="C:/Users/Kevin/eclipse-workspace/MS3/src/ms3Interview.csv";
 	
