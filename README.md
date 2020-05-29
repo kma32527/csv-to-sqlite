@@ -8,7 +8,7 @@ To run this application,
 1) Clone the project to a local repository.
 2) Open App.java.
 3) Set the variable "directory" to a valid target directory for the SQLite database to be created in.
-4) Set the "csvPath" variable to a valid path to a csv file.
+4) Set the variable "csvPath" to a valid path to a csv file.
 5) Run App.java.
 6) If successful, a prompt will pop up with a list of extracted column names. Next to each column name, select the type of each column from the drop down box and close the prompt when done.
 
