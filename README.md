@@ -93,7 +93,7 @@ An instantiable class that provides a Java representation of an SQLite table. In
 - When done with a Table instance, call close() to close the PreparedStatement.
 
 ### TypePrompt
-A prompt that pops up when executing CsvToSQLite.convert(). Creates a JDialog that pauses execution of the program and allows the user to input the desired types of each column for each variable from a list of valid column types.
+A prompt that pops up when executing CsvToSQLite.convert(). The object method launchApp() Creates a JDialog that pauses execution of the program and allows the user to input the desired types of each column for each variable from a list of valid column types. This thn returns the selected types to be used to create an array of Variable objects. 
 
 ### Variable
 An instantiable class containing a column's name and type.
