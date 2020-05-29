@@ -21,7 +21,15 @@ If successful, the directory should contain three files with names dependent on 
 ### The input csv file
 The input csv file should satisfy the following requirements:
 1) The first row of the csv should contain the column names with no missing values
-2) Values containing internal commas must be enclosed by double quotes e.g. "\\"This,contains,commas\\"" is parsed as a single value, while "This,is,4,values" is parsed as 4 distinct values.
+2) Values containing internal commas must be enclosed by double quotes e.g. the string "\\"This,contains,commas\\"" is parsed as a single value, while the string "This,contains,commas" is parsed as 3 distinct values.
+
+### Type checking on insertion
+While SQLite support dynamic typing and allows for insertion of values independent of column type, this application performs a type check during insertion into a table. If an entry does not pass the type check, it fails to be inserted. The following 6 types are supported by this application:
+1) TEXT: A generic type for storing text data. This inserts a string as-is.
+2) INTEGER: Stores integer values
+   - On insertion, the application calls Integer.parseInt(String str) on the value and inserts the result. If this fails to parse an integer, then the entry fails.
+3) REAL: Stores decimal values
+   - On insertion, the application strips all characters that are neither digits, '.', nor '-'. If the remaining string can be parsed into a double by Double.parseDouble(String str), then the value is inserted. Othrwise, the entry fails.
 
 ## Code Overview
 This project consists of 6 classes
