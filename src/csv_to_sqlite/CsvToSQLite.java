@@ -147,14 +147,14 @@ public class CsvToSQLite {
 	
 	//Method to log statistics
 	private static void logStats(String filePath, int numReceived, int numGood, int numBad) throws SecurityException, IOException {
-        boolean append = true;
-        FileHandler handler = new FileHandler(filePath, append);
-        Logger logger = Logger.getLogger(CsvToSQLite.class.getName());
-        logger.addHandler(handler);
-        logger.info("Number of records received: " + numReceived + "\n"
+        	boolean append = true;
+        	FileHandler handler = new FileHandler(filePath, append);
+        	Logger logger = Logger.getLogger(CsvToSQLite.class.getName());
+        	logger.addHandler(handler);
+        	logger.info("Number of records received: " + numReceived + "\n"
         			+ "Number of records successfully inserted: " + numGood + "\n"
         			+ "Number of records failed: " + numBad);
-        handler.close();
+        	handler.close();
 	}
 	
 	/**
@@ -177,8 +177,8 @@ public class CsvToSQLite {
 	}
 	
 	public static void main(String[] args) {
-    	String directory="C://sqlite/db/";
-    	String csvPath="C:/Users/Kevin/eclipse-workspace/MS3/src/ms3Interview.csv";
+    		String directory="C://sqlite/db/";
+    		String csvPath="C:/Users/Kevin/eclipse-workspace/MS3/src/ms3Interview.csv";
 		convert(directory, csvPath);
 		//Table table = db.selectTable("tabletest");
 		//System.out.println(Arrays.deepToString(db.getColumnTypes("tabletest")));
