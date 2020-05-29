@@ -17,6 +17,13 @@ If successful, the directory should contain three files with names dependent on 
 3) \<input-filename\>-bad.csv: A csv file containing the records that failed to be inserted.
 
 ## Overview
+
+### The input csv file
+The input csv file should satisfy the following requirements:
+1) The first row of the csv should contain the column names with no missing values
+2) Values containing internal commas must be enclosed by double quotes e.g. "This, contains, commas" is parsed as a single value.
+
+## Code Overview
 This project consists of 6 classes
 
 ### App
@@ -57,7 +64,7 @@ An instantiable class that provides a Java representation of an SQLite table. In
   - String tableName: The name of the table.
   - Variable[] cols: An array of Variable objects containing the name and type of each column.
 - To insert a string array into a table, use the method insert(String[] values)
-  - Throws a SQLException in the following cases:
+  - Throws a SQLException without inserting anything into the table in the following cases:
     - The array is incorrectly sized
     - At least one value in the array failed to pass the type check
 - To print values from the table, either call selectTable() to print all records in the table or selectTable(int limit) to print up to the specified number of records.
