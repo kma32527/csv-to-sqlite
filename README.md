@@ -4,6 +4,7 @@
 This is an application to migrate data from a csv file into an SQLite database table.
 
 ## Getting started
+To run this application,
 1) Clone the project to a local repository.
 2) Open App.java.
 3) Set the variable "directory" to a valid target directory for the SQLite database to be created in.
